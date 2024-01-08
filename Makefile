@@ -7,6 +7,7 @@
 PROJECT_NAME = tbd
 PYTHON_VERSION = 3.11
 PYTHON_INTERPRETER = python
+UCI_DATA_URL = https://archive.ics.uci.edu/static/public/2/adult.zip
 
 #################################################################################
 # COMMANDS                                                                      #
@@ -30,6 +31,7 @@ dev_requirements: requirements
 clean:
 	find . -type f -name "*.py[co]" -delete
 	find . -type d -name "__pycache__" -delete
+	find . -type f -name "*.zip" -delete
 
 
 #################################################################################
@@ -37,8 +39,13 @@ clean:
 #################################################################################
 
 ## Process raw data into processed data
-data:
-	python $(PROJECT_NAME)/data/make_dataset.py
+## Make Dataset
+data: 
+	@echo ">>> Downloading data from UCI."
+	curl -o data/raw/data.zip $(UCI_DATA_URL)
+	@echo ">>> Unzipping."
+	unzip -j data/raw/data.zip adult.data -d data/raw/
+	$(PYTHON_INTERPRETER) data/raw/make_dataset.py data/raw/adult.data data/processed/data.csv
 
 #################################################################################
 # Documentation RULES                                                           #
