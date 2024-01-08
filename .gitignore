@@ -1,5 +1,11 @@
 docs/site/
 
+# Jupyter notebooks
+*.ipynb
+# Data files
+*.csv
+*.zip
+
 # test cache
 manual_test/
 
