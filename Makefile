@@ -45,7 +45,7 @@ data:
 	curl -o data/raw/data.zip $(UCI_DATA_URL)
 	@echo ">>> Unzipping."
 	unzip -j data/raw/data.zip adult.data -d data/raw/
-	$(PYTHON_INTERPRETER) data/raw/make_dataset.py data/raw/adult.data data/processed/data.csv
+	$(PYTHON_INTERPRETER) $(PROJECT_NAME)/data/make_dataset.py data/raw/adult.data data/processed/data.csv
 
 #################################################################################
 # Documentation RULES                                                           #
