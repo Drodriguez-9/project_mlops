@@ -1,13 +1,15 @@
-from model.py import CustomTabularModel
+import pandas as pd
+from fastai.tabular.all import *
 # Path: tbd/train_model.py
 
 
 
 
-def train_tabular_classifier(dl, target_column, categorical_columns, continuous_columns, metric):
+def train_tabular_classifier(path, target_column, categorical_columns, continuous_columns, metric):
     # Load the data
+    dataframe = pd.read_csv(path)
     data = dataframe
-
+    print(dataframe.head(15))
     # Define the splits (here we're using a random split for simplicity)
     splits = RandomSplitter(valid_pct=0.2)(range_of(data))
 
@@ -28,11 +30,13 @@ def train_tabular_classifier(dl, target_column, categorical_columns, continuous_
     learn.fit_one_cycle(5)
 
     # Return the trained learner
+    torch.save(learn.model, 'models/trained_model.pth')
     return learn
-target_column = 'salary'
+target_column = 'income'
 categorical_columns = ['workclass', 'education', 'marital-status', 'occupation', 
                        'relationship', 'race', 'sex', 'native-country']
 continuous_columns = ['age', 'fnlwgt', 'education-num', 'capital-gain', 
                       'capital-loss', 'hours-per-week']
+
 # Example Usage:
-trained_model = train_tabular_classifier(df, target_column, categorical_columns, continuous_columns, accuracy)
+trained_model = train_tabular_classifier('data/processed/data.csv', target_column, categorical_columns, continuous_columns, accuracy)
