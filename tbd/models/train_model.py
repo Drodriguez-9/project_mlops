@@ -1,6 +1,12 @@
 import pandas as pd
+import warnings
+
+# Suppress the specific UserWarning
+warnings.filterwarnings('ignore', category=UserWarning)
+
 from fastai.tabular.all import *
 # Path: tbd/train_model.py
+
 
 
 
