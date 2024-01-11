@@ -1,12 +1,12 @@
-.PHONY: create_environment requirements dev_requirements clean data build_documentation serve_documentation
+.PHONY: create_environment requirements dev_requirements clean data train build_documentation serve_documentation
 
 #################################################################################
 # GLOBALS                                                                       #
 #################################################################################
 
 PROJECT_NAME = tbd
-PYTHON_VERSION = 3.11
-PYTHON_INTERPRETER = python
+PYTHON_VERSION = 3.10
+PYTHON_INTERPRETER = python3
 UCI_DATA_URL = https://archive.ics.uci.edu/static/public/2/adult.zip
 
 #################################################################################
@@ -48,7 +48,9 @@ data:
 	@echo ">>> Unzipping."
 	unzip -j data/raw/data.zip adult.data -d data/raw/
 	$(PYTHON_INTERPRETER) $(PROJECT_NAME)/data/make_dataset.py data/raw/adult.data data/processed/data.csv
-
+## Train
+train:
+	$(PYTHON_INTERPRETER) $(PROJECT_NAME)/models/train_model.py
 #################################################################################
 # Documentation RULES                                                           #
 #################################################################################
