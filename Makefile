@@ -41,6 +41,8 @@ clean:
 ## Process raw data into processed data
 ## Make Dataset
 data: 
+	@echo ">>> Creating directories."
+	mkdir -p data/raw data/processed
 	@echo ">>> Downloading data from UCI."
 	curl -o data/raw/data.zip $(UCI_DATA_URL)
 	@echo ">>> Unzipping."

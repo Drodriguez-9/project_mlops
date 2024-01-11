@@ -56,13 +56,13 @@ class DataProcessor:
         for col in cat_ix:
             self.data[col] = LabelEncoder().fit_transform(self.data[col])
 
-        # Initialize the ColumnTransformer with StandardScaler
-        ct = ColumnTransformer(
-            [("n", StandardScaler(), num_ix)], remainder="passthrough"
-        )  # 'passthrough' leaves the already encoded categorical columns untouched
+        # # Initialize the ColumnTransformer with StandardScaler
+        # ct = ColumnTransformer(
+        #     [("n", StandardScaler(), num_ix)], remainder="passthrough"
+        # )  # 'passthrough' leaves the already encoded categorical columns untouched
 
-        # Apply the ColumnTransformer to the dataset to standarize
-        self.data[num_ix] = ct.fit_transform(self.data[num_ix])
+        # # Apply the ColumnTransformer to the dataset to standarize
+        # self.data[num_ix] = ct.fit_transform(self.data[num_ix])
 
     def write_data(self, processed_data_path: str):
         """Write processed data to directory."""
