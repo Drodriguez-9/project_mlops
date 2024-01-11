@@ -8,7 +8,7 @@ RUN apt update && \
 COPY requirements.txt requirements.txt
 COPY pyproject.toml pyproject.toml
 COPY tbd/ tbd/
-COPY data/ data/
+COPY Makefile Makefile
 
 WORKDIR /
 RUN pip install -r requirements.txt --no-cache-dir
