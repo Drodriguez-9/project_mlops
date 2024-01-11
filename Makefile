@@ -5,7 +5,7 @@
 #################################################################################
 
 PROJECT_NAME = tbd
-PYTHON_VERSION = 3.11
+PYTHON_VERSION = 3.10
 PYTHON_INTERPRETER = python
 UCI_DATA_URL = https://archive.ics.uci.edu/static/public/2/adult.zip
 

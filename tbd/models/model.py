@@ -1,28 +1,6 @@
 import torch
-
-
-class MyNeuralNet(torch.nn.Module):
-    """Basic neural network class.
-
-    Args:
-        in_features: number of input features
-        out_features: number of output features
-
-    """
-
-    def __init__(self, in_features: int, out_features: int) -> None:
-        self.l1 = torch.nn.Linear(in_features, 500)
-        self.l2 = torch.nn.Linear(500, out_features)
-        self.r = torch.nn.ReLU()
-
-    def forward(self, x: torch.Tensor) -> torch.Tensor:
-        """Forward pass of the model.
-
-        Args:
-            x: input tensor expected to be of shape [N,in_features]
-
-        Returns:
-            Output tensor with shape [N,out_features]
-
-        """
-        return self.l2(self.r(self.l1(x)))
+from fastai.tabular.all import *
+model = tabular_learner(df, metrics=accuracy)
+class CustomTabularModel(TabularModel):
+    def __init__(self, emb_szs, n_cont, out_sz, layers, ps=None, embed_p=0., y_range=None):
+        super().__init__(emb_szs, n_cont, out_sz, layers, ps, embed_p, y_range)
