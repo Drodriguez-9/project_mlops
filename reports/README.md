@@ -349,10 +349,11 @@ Due to the simplicity of our training code, we did not find that using a python 
 >
 > Example:
 > *We used the following two services: Engine and Bucket. Engine is used for... and Bucket is used for...*
->
+> 
 > Answer:
 
---- question 17 fill here ---
+--- So far we have used the cloud Compute Engine...
+We requested a GPU even though the training was completely doable with local resources. The reason being we had the scalability as one of the main goals of the project.   ---
 
 ### Question 18
 
@@ -367,7 +368,16 @@ Due to the simplicity of our training code, we did not find that using a python 
 >
 > Answer:
 
---- question 18 fill here ---
+--- Current configuration: 
+gcloud compute instances create "mlopsgpu" \
+    --zone="europe-west4-a" \
+    --image-family="pytorch-latest-gpu" \
+    --image-project=deeplearning-platform-release \
+    --accelerator="type=nvidia-tesla-p100,count=1" \
+    --maintenance-policy=TERMINATE \
+    --metadata="install-nvidia-driver=True" \
+    
+    ---
 
 ### Question 19
 
