@@ -41,4 +41,4 @@ continuous_columns = ['age', 'fnlwgt', 'education-num', 'capital-gain',
                       'capital-loss', 'hours-per-week']
 
 #Usage:
-trained_model = train_tabular_classifier('data/processed/data.csv', target_column, categorical_columns, continuous_columns, accuracy)
+trained_model = train_tabular_classifier('data/processed/train_data.csv', target_column, categorical_columns, continuous_columns, accuracy)
