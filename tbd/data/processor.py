@@ -64,6 +64,10 @@ class DataProcessor:
         # # Apply the ColumnTransformer to the dataset to standarize
         # self.data[num_ix] = ct.fit_transform(self.data[num_ix])
 
-    def write_data(self, processed_data_path: str):
+    def write_data(self, processed_train_data_path: str, processed_test_data_path: str):
         """Write processed data to directory."""
-        self.data.to_csv(processed_data_path, index=False)
+        train_size = int(len(self.data) * 0.8)
+        train_data = self.data[:train_size]
+        test_data = self.data[train_size:]
+        train_data.to_csv(processed_train_data_path, index=False)
+        test_data.to_csv(processed_test_data_path, index=False)

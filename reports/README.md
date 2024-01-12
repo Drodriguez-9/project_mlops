@@ -50,23 +50,23 @@ end of the project.
 
 ### Week 1
 
-* [ ] Create a git repository
-* [ ] Make sure that all team members have write access to the github repository
-* [ ] Create a dedicated environment for you project to keep track of your packages
-* [ ] Create the initial file structure using cookiecutter
-* [ ] Fill out the `make_dataset.py` file such that it downloads whatever data you need and
-* [ ] Add a model file and a training script and get that running
-* [ ] Remember to fill out the `requirements.txt` file with whatever dependencies that you are using
-* [ ] Remember to comply with good coding practices (`pep8`) while doing the project
-* [ ] Do a bit of code typing and remember to document essential parts of your code
+* [X] Create a git repository
+* [X] Make sure that all team members have write access to the github repository
+* [X] Create a dedicated environment for you project to keep track of your packages
+* [X] Create the initial file structure using cookiecutter
+* [X] Fill out the `make_dataset.py` file such that it downloads whatever data you need and
+* [X] Add a model file and a training script and get that running
+* [X] Remember to fill out the `requirements.txt` file with whatever dependencies that you are using
+* [X] Remember to comply with good coding practices (`pep8`) while doing the project
+* [X] Do a bit of code typing and remember to document essential parts of your code
 * [ ] Setup version control for your data or part of your data
-* [ ] Construct one or multiple docker files for your code
-* [ ] Build the docker files locally and make sure they work as intended
-* [ ] Write one or multiple configurations files for your experiments
-* [ ] Used Hydra to load the configurations and manage your hyperparameters
+* [X] Construct one or multiple docker files for your code
+* [X] Build the docker files locally and make sure they work as intended
+* [X] Write one or multiple configurations files for your experiments
+* [X] Used Hydra to load the configurations and manage your hyperparameters
 * [ ] When you have something that works somewhat, remember at some point to to some profiling and see if
       you can optimize your code
-* [ ] Use Weights & Biases to log training progress and other important metrics/artifacts in your code. Additionally,
+* [X] Use Weights & Biases to log training progress and other important metrics/artifacts in your code. Additionally,
       consider running a hyperparameter optimization sweep.
 * [ ] Use Pytorch-lightning (if applicable) to reduce the amount of boilerplate in your code
 
@@ -105,7 +105,7 @@ end of the project.
 >
 > Answer:
 
---- question 1 fill here ---
+72
 
 ### Question 2
 > **Enter the study number for each member in the group**
@@ -116,7 +116,7 @@ end of the project.
 >
 > Answer:
 
---- question 2 fill here ---
+ s233593, s223730, s222883, s230148
 
 ### Question 3
 > **What framework did you choose to work with and did it help you complete the project?**
@@ -129,7 +129,7 @@ end of the project.
 >
 > Answer:
 
---- question 3 fill here ---
+We used the third-party framework fastai in our project. We used their tabular learner as our model and trained it using their fit_one_cycle function.
 
 ## Coding environment
 
@@ -148,7 +148,7 @@ end of the project.
 >
 > Answer:
 
---- question 4 fill here ---
+We used a requirements.txt file for managing our dependencies. We then each had a virtual environment locally saved in the repository folder that we used with pip to have the right versions of packages installed.
 
 ### Question 5
 
@@ -163,7 +163,7 @@ end of the project.
 > *experiments.*
 > Answer:
 
---- question 5 fill here ---
+We added a config folder to use with hydra for our hyperparameters. We then removed the notebooks folders since we didn't need any notebooks for our implementation and then also removed the model.py file inside project/models since our model was built using fastai. Lastly we also removes the visualizations folder inside of the project folder since our model didn't call for any visualizations.
 
 ### Question 6
 
@@ -174,7 +174,7 @@ end of the project.
 >
 > Answer:
 
---- question 6 fill here ---
+Due to our small team size and the small amount of coded needed for the training, we did not implement any rules. It is however crucial to implement rules for cleaner code when working with a larger team of people on more code so as to make it easier to understand each other's codes and debug.
 
 ## Version control
 
@@ -193,7 +193,7 @@ end of the project.
 >
 > Answer:
 
---- question 7 fill here ---
+We implemented a single test to check that the data was loaded in correctly but did not feel the need to test any more due to the simplicity of the remaining code giving us certainty that the rest is working.
 
 ### Question 8
 
@@ -208,7 +208,7 @@ end of the project.
 >
 > Answer:
 
---- question 8 fill here ---
+Our coverage is very small due to only testing the dataloading (maybe about 10%) and we're still confident in the code working correctly due to the model accuracy being satisfactory and the remaining code being quite simple. 
 
 ### Question 9
 
@@ -223,7 +223,7 @@ end of the project.
 >
 > Answer:
 
---- question 9 fill here ---
+We did indeed use branches in our group so that we could all work on different things at the same time without any causing any errors. When someone was done with their part they would upload it to their own branch and someone else would review it and merge it.
 
 ### Question 10
 
@@ -238,7 +238,7 @@ end of the project.
 >
 > Answer:
 
---- question 10 fill here ---
+We set up DVC for managing our data, it was however not necessary by any means due to the small size of our data. Version control of data becomes useful when you have large collections of data that are getting processed, to make sure that the right versions of the data are used by the right models.
 
 ### Question 11
 
@@ -273,7 +273,7 @@ end of the project.
 >
 > Answer:
 
---- question 12 fill here ---
+ We used a config file to specify our hyperparameters meaning that to run the code you just have to run python train_model.py . If you want to adjust the parameters just adjust the values in config/hyperparameters.yaml .
 
 ### Question 13
 
@@ -288,7 +288,7 @@ end of the project.
 >
 > Answer:
 
---- question 13 fill here ---
+To make sure that a training experiment is reproducable we used a seed when splitting our data up into training/test data. Theoretically one should therefore get the samr results as we did by running the code.
 
 ### Question 14
 
@@ -335,7 +335,7 @@ end of the project.
 >
 > Answer:
 
---- question 16 fill here ---
+Due to the simplicity of our training code, we did not find that using a python debugger would be necesarry. The amount of bugs we encountered were minimal and could easily be found using breakpoints and print statements.
 
 ## Working in the cloud
 

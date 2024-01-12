@@ -1,23 +1,19 @@
 import pandas as pd
 import warnings
-
-# Suppress the specific UserWarning
-warnings.filterwarnings('ignore', category=UserWarning)
-
 from fastai.tabular.all import *
-# Path: tbd/train_model.py
 
 
-
-
-
+warnings.filterwarnings('ignore', category=UserWarning)
+from omegaconf import OmegaConf
+# loading
+config = OmegaConf.load('config/hyperparameters.yaml')
+seed = 42
 def train_tabular_classifier(path, target_column, categorical_columns, continuous_columns, metric):
     # Load the data
     dataframe = pd.read_csv(path)
     data = dataframe
-    print(dataframe.head(15))
     # Define the splits (here we're using a random split for simplicity)
-    splits = RandomSplitter(valid_pct=0.2)(range_of(data))
+    splits = RandomSplitter(valid_pct=0.2, seed = seed)(range_of(data))
 
     # Preprocess the data
     procs = [Categorify, FillMissing, Normalize]
@@ -27,13 +23,13 @@ def train_tabular_classifier(path, target_column, categorical_columns, continuou
                        y_names=target_column, splits=splits)
     
     # Create a DataLoaders object
-    dls = to.dataloaders(bs=64)
+    dls = to.dataloaders(bs=config.hyperparameters.batch_size)
     
     # Define the learner
     learn = tabular_learner(dls, metrics=metric)
 
     # Train the model
-    learn.fit_one_cycle(5)
+    learn.fit_one_cycle(config.hyperparameters.epochs)
 
     # Return the trained learner
     torch.save(learn.model, 'models/trained_model.pth')
@@ -44,5 +40,5 @@ categorical_columns = ['workclass', 'education', 'marital-status', 'occupation',
 continuous_columns = ['age', 'fnlwgt', 'education-num', 'capital-gain', 
                       'capital-loss', 'hours-per-week']
 
-# Example Usage:
+#Usage:
 trained_model = train_tabular_classifier('data/processed/data.csv', target_column, categorical_columns, continuous_columns, accuracy)
