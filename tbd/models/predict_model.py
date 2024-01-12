@@ -27,7 +27,7 @@ def predict_tabular_classifier(data_path):
     return predicted_classes
 
 if __name__ == "__main__":
-    data_to_predict_path = 'data/processed/data.csv'  # Update with the path to your new data
+    data_to_predict_path = 'data/processed/test_data.csv'  # Update with the path to your new data
     predicted_classes = predict_tabular_classifier(data_to_predict_path)
 
     # Do something with the predicted classes, e.g., save to a file or print them
