@@ -47,7 +47,7 @@ data:
 	curl -o data/raw/data.zip $(UCI_DATA_URL)
 	@echo ">>> Unzipping."
 	unzip -j data/raw/data.zip adult.data -d data/raw/
-	$(PYTHON_INTERPRETER) $(PROJECT_NAME)/data/make_dataset.py data/raw/adult.data data/processed/data.csv
+	$(PYTHON_INTERPRETER) $(PROJECT_NAME)/data/make_dataset.py data/raw/adult.data data/processed/train_data.csv data/processed/test_data.csv
 ## Train
 train:
 	$(PYTHON_INTERPRETER) $(PROJECT_NAME)/models/train_model.py
