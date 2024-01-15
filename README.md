@@ -72,7 +72,7 @@ This repository contains the project work of Team 72 for the DTU course [Machine
 Team members:
 
 - Dimitris Voukatas s230148
-- Diego Gordon Rodríguez sxxxxxx
+- Diego Rodriguez Gordo sxxxxxx
 - Welin Mark Hageman S233593
 - Pierre Høgenhaug s223730
 
