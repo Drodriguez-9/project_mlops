@@ -413,9 +413,8 @@ Under the folder the raw data is stored, as we can see here:
 > **You can take inspiration from [this figure](figures/registry.png).**
 >
 > Answer:
-Still not done. Not sure if we are gonna do it.
 
---- question 20 fill here ---
+--- ![my_image](figures/registry.png) ---
 
 ### Question 21
 
@@ -425,7 +424,7 @@ Still not done. Not sure if we are gonna do it.
 > Answer:
 Still not done. Not sure if we are gonna do it.
 
---- question 21 fill here ---
+--- ![my_image](figures/build.png) ---
 
 ### Question 22
 
@@ -505,6 +504,7 @@ Still not done. Not sure if we are gonna do it.
 >
 > Answer:
 s222883: There was an issue with the cloud ssh keys autorization which didn't allow me to run locally gcloud compute ssh. It was annoying and I couldn't solve it. However I still had the access through the GC integrated terminal.
+Then when building the docker images in the GC there I spent some time figuring out an error as you cannot use build --mount option.
 
 --- question 26 fill here ---
 
