@@ -389,7 +389,7 @@ gcloud compute instances create "mlopsgpu" \
 > Answer:
 
 ```markdown
-![my_image](figures/<image>.<extension>)
+![my_image](figures/bucket.png)
 ```
 
 ### Question 20
