@@ -527,9 +527,9 @@ Then when building the docker images in the GC there I spent some time figuring 
 - s222883: 
     + Git repo and cookiecutter template.
     + Data Version Control (DVC) both in Google Drive and Google Cloud.
-    + Docker both locally and in the Google Cloud (last one has to be done)
+    + Docker locally.
     + Get the model training in Google Cloud using Engine.
     + GCP Bucket configuration and set up to use it with DVC.
-    
+    + Create trigger in Github to automatically create docker images when pushing new changes.
     
  ---
