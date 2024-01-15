@@ -387,10 +387,7 @@ gcloud compute instances create "mlopsgpu" \
 > **You can take inspiration from [this figure](figures/bucket.png).**
 >
 > Answer:
-
-```markdown
 ![my_image](figures/bucket.png)
-```
 
 ### Question 20
 
