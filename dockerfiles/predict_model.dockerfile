@@ -14,4 +14,4 @@ WORKDIR /
 RUN pip install -r requirements.txt --no-cache-dir
 RUN pip install . --no-deps --no-cache-dir
 
-ENTRYPOINT ["python", "-u", "tbd/predict_model.py"]
+ENTRYPOINT ["python", "-u", "tbd/models/predict_model.py"]
