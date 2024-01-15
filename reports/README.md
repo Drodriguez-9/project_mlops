@@ -352,7 +352,7 @@ Due to the simplicity of our training code, we did not find that using a python 
 > 
 > Answer:
 
---- So far we have used the cloud Compute Engine...
+--- So far we have used the cloud Compute Engine and also the cluod bucker to store the data.
 We requested a GPU even though the training was completely doable with local resources. The reason being we had the scalability as one of the main goals of the project.   ---
 
 ### Question 18
