@@ -352,9 +352,9 @@ Due to the simplicity of our training code, we did not find that using a python 
 > 
 > Answer:
 
---- So far we have used the cloud Compute Engine and also the cluod bucket to store the data.
+--- So far we have used the cloud Compute Engine and also the cloud bucket to store the data.
 As previously mentioned, we set up the dvc configuration to have the data stored in Google Drive. However, we wanted to store the data in Google Cloud instead, so we created a bucket.
-To make the data storage process more secure (let's suppose we are working with sensitive data as patients data) we decided to crfeate a service account. 
+To make the data storage process more secure (let's suppose we are working with sensitive data as patients data) we decided to create a service account. 
 We requested a GPU even though the training was completely doable with local resources. The reason being we had the scalability as one of the main goals of the project.   ---
 
 ### Question 18
@@ -388,7 +388,9 @@ gcloud compute instances create "mlopsgpu" \
 >
 > Answer:
 
---- question 19 fill here ---
+```markdown
+![my_image](figures/<image>.<extension>)
+```
 
 ### Question 20
 
