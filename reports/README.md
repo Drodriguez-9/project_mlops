@@ -533,3 +533,7 @@ Then when building the docker images in the GC there I spent some time figuring 
     + Create trigger in Github to automatically create docker images when pushing new changes.
     
  ---
+- s233593:
+      + Training code for model
+      + FastAPI deployment
+      + Hydra configuration
