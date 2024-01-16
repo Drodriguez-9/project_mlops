@@ -32,7 +32,7 @@ def train_tabular_classifier(path, target_column, categorical_columns, continuou
     learn.fit_one_cycle(config.hyperparameters.epochs)
 
     # Return the trained learner
-    torch.save(learn.model, 'models/trained_model.pth')
+    learn.save('trained_model2')
     return learn
 target_column = 'income'
 categorical_columns = ['workclass', 'education', 'marital-status', 'occupation', 

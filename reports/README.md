@@ -79,7 +79,7 @@ end of the project.
 * [ ] Create a data storage in GCP Bucket for you data and preferable link this with your data version control setup
 * [ ] Create a trigger workflow for automatically building your docker images
 * [ ] Get your model training in GCP using either the Engine or Vertex AI
-* [ ] Create a FastAPI application that can do inference using your model
+* [X] Create a FastAPI application that can do inference using your model
 * [ ] If applicable, consider deploying the model locally using torchserve
 * [ ] Deploy your model in GCP using either Functions or Run as the backend
 
@@ -420,7 +420,7 @@ gcloud compute instances create "mlopsgpu" \
 >
 > Answer:
 
---- question 22 fill here ---
+We deployed our model locally using fastapi in our app.py file. When running "uvicorn app:app --reload" a local server stars, which can interactively be used by opening a browser and going to http://127.0.0.1:8000/docs . There you can input data which the model will use to calculate a prediction of whether or not you earn more than 50k USD a year.
 
 ### Question 23
 
