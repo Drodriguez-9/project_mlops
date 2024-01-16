@@ -1,0 +1,12 @@
+steps:
+  # Build and push the trainer image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/mlops-411015/trainer', '-f', 'dockerfiles/train_model.dockerfile', '.']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/mlops-411015/trainer']
+
+  # Build and push the predictor image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/mlops-411015/predictor', '-f', 'dockerfiles/predict_model.dockerfile', '.']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/mlops-411015/predictor']

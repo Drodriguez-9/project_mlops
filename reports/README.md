@@ -59,7 +59,7 @@ end of the project.
 * [X] Remember to fill out the `requirements.txt` file with whatever dependencies that you are using
 * [X] Remember to comply with good coding practices (`pep8`) while doing the project
 * [X] Do a bit of code typing and remember to document essential parts of your code
-* [ ] Setup version control for your data or part of your data
+* [X] Setup version control for your data or part of your data
 * [X] Construct one or multiple docker files for your code
 * [X] Build the docker files locally and make sure they work as intended
 * [X] Write one or multiple configurations files for your experiments
@@ -76,9 +76,9 @@ end of the project.
 * [ ] Write unit tests related to model construction and or model training
 * [ ] Calculate the coverage.
 * [ ] Get some continuous integration running on the github repository
-* [ ] Create a data storage in GCP Bucket for you data and preferable link this with your data version control setup
-* [ ] Create a trigger workflow for automatically building your docker images
-* [ ] Get your model training in GCP using either the Engine or Vertex AI
+* [X] Create a data storage in GCP Bucket for you data and preferable link this with your data version control setup
+* [X] Create a trigger workflow for automatically building your docker images
+* [X] Get your model training in GCP using either the Engine or Vertex AI
 * [X] Create a FastAPI application that can do inference using your model
 * [ ] If applicable, consider deploying the model locally using torchserve
 * [ ] Deploy your model in GCP using either Functions or Run as the backend
@@ -224,6 +224,9 @@ Our coverage is very small due to only testing the dataloading (maybe about 10%)
 > Answer:
 
 We did indeed use branches in our group so that we could all work on different things at the same time without any causing any errors. When someone was done with their part they would upload it to their own branch and someone else would review it and merge it.
+The workflow when you wanted to add a new feature to the code (or correct a bug) was the following:
+First you would git checkout main and pull the most recent changes. After this you would create a branch called feat/feature_name (or bug/bug_name). When finished with the changes you will pull to check if any changes have been made to main and then git rebase main to place your branch changes on top of the main ones. Then you would push your branch changes and create a Pull Request in the Github browser describing your commit. The main branch is protected so someone has to approve your PR before merging it.
+We know that this whole process may be a bit tedious for this kind of small projects, but we wanted to ensure the scalability and reliability of the code (as if main was the production branch).
 
 ### Question 10
 
@@ -320,7 +323,9 @@ To make sure that a training experiment is reproducable we used a seed when spli
 >
 > Answer:
 
---- question 15 fill here ---
+--- We created two images, one for training and storing the trained model and another for making the predictions. As I dont have GPU in my personal computer, I just run the images using
+
+ ---
 
 ### Question 16
 
@@ -352,7 +357,14 @@ Due to the simplicity of our training code, we did not find that using a python 
 > 
 > Answer:
 
---- So far we have used the cloud Compute Engine...
+--- We have used two primary GCP services: Google Cloud Compute Engine and Google Cloud Storage (bucket)
+
+"Google Cloud Storage provides scalable and secure object storage on the cloud. It's used for storing large datasets, with 'buckets' serving as the primary containers for data. Users can specify unique bucket names, storage classes, and locations."
+
+As previously mentioned, we set up the dvc configuration to have the data stored in Google Drive. However, we wanted to store the data in Google Cloud instead, so we created a bucket.
+To make the data storage process more secure (let's suppose we are working with sensitive data as patients data) we decided to create a service account. 
+
+"Google Cloud Compute Engine offers a service within the Google Cloud Platform for creating, configuring, and scaling virtual machines quickly. It's cost-effective, secure, and allows for rapid scaling and customization of infrastructure. Users can choose the precise zone and region for their data resources, making it suitable for a variety of applications including databases and websites."
 We requested a GPU even though the training was completely doable with local resources. The reason being we had the scalability as one of the main goals of the project.   ---
 
 ### Question 18
@@ -367,8 +379,13 @@ We requested a GPU even though the training was completely doable with local res
 > *using a custom container: ...*
 >
 > Answer:
+First we started creating a simple VM instance to try out Google Cloud and test that the model was succesfully run from there. 
+We chose the closest location to reduce latency. For the resources we chose one of the cheapest as our data set is rather small and we did not want to spend the 50$ before finishing.
+Machine type - n1-standard-1
+CPU platform - Intel Haswell
 
---- Current configuration: 
+We also configure an instance to allow GPU usage just to make sure we could have scalated the model if more GPU was required. For this we had to reques an update of the resources in the QUOTA menu.
+We only requested 1 so they accept quickly the upgrade. This is the command used to create this second instance:
 gcloud compute instances create "mlopsgpu" \
     --zone="europe-west4-a" \
     --image-family="pytorch-latest-gpu" \
@@ -377,7 +394,6 @@ gcloud compute instances create "mlopsgpu" \
     --maintenance-policy=TERMINATE \
     --metadata="install-nvidia-driver=True" \
     
-    ---
 
 ### Question 19
 
@@ -385,8 +401,11 @@ gcloud compute instances create "mlopsgpu" \
 > **You can take inspiration from [this figure](figures/bucket.png).**
 >
 > Answer:
+First, image shows the basic configuration, setting Protection as Object versioning to allow dvc to work with it.
+![my_image](figures/bucket.png)
+Under the folder the raw data is stored, as we can see here:
+![my_image](figures/bucket1.png)
 
---- question 19 fill here ---
 
 ### Question 20
 
@@ -395,7 +414,7 @@ gcloud compute instances create "mlopsgpu" \
 >
 > Answer:
 
---- question 20 fill here ---
+--- ![my_image](figures/registry.png) ---
 
 ### Question 21
 
@@ -403,8 +422,9 @@ gcloud compute instances create "mlopsgpu" \
 > **your project. You can take inspiration from [this figure](figures/build.png).**
 >
 > Answer:
+Still not done. Not sure if we are gonna do it.
 
---- question 21 fill here ---
+--- ![my_image](figures/build.png) ---
 
 ### Question 22
 
@@ -483,6 +503,8 @@ We deployed our model locally using fastapi in our app.py file. When running "uv
 > *The biggest challenges in the project was using ... tool to do ... . The reason for this was ...*
 >
 > Answer:
+s222883: There was an issue with the cloud ssh keys autorization which didn't allow me to run locally gcloud compute ssh. It was annoying and I couldn't solve it. However I still had the access through the GC integrated terminal.
+Then when building the docker images in the GC there I spent some time figuring out an error as you cannot use build --mount option.
 
 --- question 26 fill here ---
 
@@ -501,4 +523,13 @@ We deployed our model locally using fastapi in our app.py file. When running "uv
 >
 > Answer:
 
---- question 27 fill here ---
+--- 
+- s222883: 
+    + Git repo and cookiecutter template.
+    + Data Version Control (DVC) both in Google Drive and Google Cloud.
+    + Docker locally.
+    + Get the model training in Google Cloud using Engine.
+    + GCP Bucket configuration and set up to use it with DVC.
+    + Create trigger in Github to automatically create docker images when pushing new changes.
+    
+ ---
