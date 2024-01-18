@@ -3,6 +3,7 @@ import pytest
 from tbd.models.train_model import train_tabular_classifier
 import pandas as pd
 from tests import _PATH_DATA  # Import the data path
+from fastai.tabular.all import accuracy
 
 @pytest.fixture
 def setup_data():
