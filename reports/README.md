@@ -72,8 +72,8 @@ end of the project.
 
 ### Week 2
 
-* [ ] Write unit tests related to the data part of your code
-* [ ] Write unit tests related to model construction and or model training
+* [X] Write unit tests related to the data part of your code
+* [X] Write unit tests related to model construction and or model training
 * [ ] Calculate the coverage.
 * [ ] Get some continuous integration running on the github repository
 * [X] Create a data storage in GCP Bucket for you data and preferable link this with your data version control setup
@@ -83,6 +83,7 @@ end of the project.
 * [ ] If applicable, consider deploying the model locally using torchserve
 * [ ] Deploy your model in GCP using either Functions or Run as the backend
 
+ 
 ### Week 3
 
 * [ ] Check how robust your model is towards data drifting
@@ -94,9 +95,9 @@ end of the project.
 
 ### Additional
 
-* [ ] Revisit your initial project description. Did the project turn out as you wanted?
-* [ ] Make sure all group members have a understanding about all parts of the project
-* [ ] Uploaded all your code to github
+* [X] Revisit your initial project description. Did the project turn out as you wanted?
+* [X] Make sure all group members have a understanding about all parts of the project
+* [X] Uploaded all your code to github
 
 ## Group information
 
@@ -556,6 +557,12 @@ s223730: Understanding containers. Tutorials and Youtube videos.
     + tests: pytest
     + formatting/linting: ruff
     + Github Actions workflow
+ 
+  -s230148
+  + tests: data
+  + env requirements
+  + model parameters
+  + project documentation 
  ---
 
 ### Question 28
