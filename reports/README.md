@@ -218,7 +218,7 @@ We use pytest to set up our data before running the tests, and we use assert sta
 >
 > Answer:
 
-Our coverage is very small due to only testing the dataloading (maybe about 10%) and we're still confident in the code working correctly due to the model accuracy being satisfactory and the remaining code being quite simple. 
+Our coverage is very small due to only testing the dataloading and we're still confident in the code working correctly due to the model accuracy being satisfactory and the remaining code being quite simple. 
 
 ### Question 9
 
@@ -267,7 +267,9 @@ We set up DVC for managing our data, it was however not necessary by any means d
 >
 > Answer:
 
---- question 11 fill here ---
+Sadly, we did not have the time to setup continuous integration as a part of this project.
+
+(MISSING)
 
 ## Running code and tracking experiments
 
@@ -338,7 +340,9 @@ We track these metrics using wandb when training the model in train_model.py, an
 >
 > Answer:
 
---- We created two images, one for training and storing the trained model and another for making the predictions. As I dont have GPU in my personal computer, I just run the images using
+--- We created two images, one for training and storing the trained model and another for making the predictions. As I dont have GPU in my personal computer, I just run the images using 
+
+(MISSING)
 
  ---
 
@@ -441,6 +445,8 @@ Still not done. Not sure if we are gonna do it.
 
 --- ![my_image](figures/build.png) ---
 
+
+(MISSING)
 ### Question 22
 
 > **Did you manage to deploy your model, either in locally or cloud? If not, describe why. If yes, describe how and**
@@ -472,6 +478,8 @@ We deployed our model locally using fastapi in our app.py file. When running "uv
 
 --- question 23 fill here ---
 
+(MISSING)
+
 ### Question 24
 
 > **How many credits did you end up using during the project and what service was most expensive?**
@@ -485,6 +493,8 @@ We deployed our model locally using fastapi in our app.py file. When running "uv
 > Answer:
 
 --- question 24 fill here ---
+
+(MISSING)
 
 ## Overall discussion of project
 
@@ -507,6 +517,11 @@ We deployed our model locally using fastapi in our app.py file. When running "uv
 
 --- question 25 fill here ---
 
+
+-- ![my_image](figures/overview.png) ---
+
+The starting point of our project was the actual code needed to train our model. We used the fastai module's tabular learner, based on pytorch, which worked quite flawlessly and cleanly. We then used github to store our code in the cookiecutter template that was given to us in the course. When making changes in the code we simply made a new branch and merged it into the repository. Even though the model could easily be trained locally, we used GCP to train the model and wandb to track the training progress. Once we had a trained model we used fastapi to deploy the model locally, allowing us to easily make predictions about people's incomes.
+
 ### Question 26
 
 > **Discuss the overall struggles of the project. Where did you spend most time and what did you do to overcome these**
@@ -521,6 +536,7 @@ We deployed our model locally using fastapi in our app.py file. When running "uv
 s222883: There was an issue with the cloud ssh keys autorization which didn't allow me to run locally gcloud compute ssh. It was annoying and I couldn't solve it. However I still had the access through the GC integrated terminal.
 Then when building the docker images in the GC there I spent some time figuring out an error as you cannot use build --mount option.
 s223730: Understanding containers. Tutorials and Youtube videos. 
+s233593: Loading the saved model and using it to predict for the local deployment of the model actually proved to give us a lot of issues.
 --- question 26 fill here ---
 
 ### Question 27
@@ -551,6 +567,7 @@ s223730: Understanding containers. Tutorials and Youtube videos.
     + Training code for model
     + FastAPI deployment
     + Hydra configuration
+    + Report writing
 
 - s223730:
     + logging: WandB
