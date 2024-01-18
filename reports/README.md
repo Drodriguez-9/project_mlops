@@ -559,10 +559,10 @@ s223730: Understanding containers. Tutorials and Youtube videos.
     + Github Actions workflow
  
   -s230148
-  + tests: data
+  + unit tests
   + env requirements
   + model parameters
-  + project documentation 
+  + project reporting 
  ---
 
 ### Question 28
