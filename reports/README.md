@@ -515,7 +515,7 @@ We deployed our model locally using fastapi in our app.py file. When running "uv
 > Answer:
 s222883: There was an issue with the cloud ssh keys autorization which didn't allow me to run locally gcloud compute ssh. It was annoying and I couldn't solve it. However I still had the access through the GC integrated terminal.
 Then when building the docker images in the GC there I spent some time figuring out an error as you cannot use build --mount option.
-
+s223730: Understanding containers. Tutorials and Youtube videos. 
 --- question 26 fill here ---
 
 ### Question 27
