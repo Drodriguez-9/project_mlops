@@ -83,6 +83,7 @@ end of the project.
 * [ ] If applicable, consider deploying the model locally using torchserve
 * [ ] Deploy your model in GCP using either Functions or Run as the backend
 
+ 
 ### Week 3
 
 * [ ] Check how robust your model is towards data drifting
@@ -552,6 +553,12 @@ s223730: Understanding containers. Tutorials and Youtube videos.
     + tests: pytest
     + formatting/linting: ruff
     + Github Actions workflow
+ 
+  -s230148
+  + tests: data
+  + env requirements
+  + model parameters
+  + project documentation 
  ---
 
 ### Question 28
