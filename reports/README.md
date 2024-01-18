@@ -313,9 +313,13 @@ Here are our ![logging results from WandB](figures/wandb_mlops.png)
 
 Due to the simplicity of our model, we are only tracking a couple of several key metrics to evaluate the performance and behavior of our model. The metrics help us understand how our model is performing and identify areas for improvement. 
 
-Accuracy: This measures how often our model correctly predicts the target variable. We track accuracy because it gives us a straightforward indication of the model's effectiveness. 
+Accuracy (training loss and validation loss): This measures how often our model correctly predicts the target variable. We track accuracy because it gives us a straightforward indication of the model's effectiveness. 
+
+Learning Rate: The learning rate shows how the model learns from the data during training. It influences the size of the steps the model takes when adjusting its weights in response to the error it observes.
 
 Prediction Details: We log the actual predictions made by our model. This is important because it lets us compare it against the true values.
+
+
 
 We track these metrics using wandb when training the model in train_model.py, and we use WandbCallback, a special feature in wandb implemented for fastai.
 
