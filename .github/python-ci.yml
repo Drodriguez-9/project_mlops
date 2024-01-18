@@ -1,0 +1,31 @@
+name: Python CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.10'  # Adjust as necessary
+
+    - name: Install dependencies
+      run: |
+        pip install ruff pytest
+        # Add any other dependencies here
+
+    - name: Lint with Ruff
+      run: ruff .
+
+    - name: Run Pytest
+      run: pytest ./test/
