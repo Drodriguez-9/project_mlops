@@ -174,7 +174,10 @@ We added a config folder to use with hydra for our hyperparameters. We then remo
 >
 > Answer:
 
-Due to our small team size and the small amount of coded needed for the training, we did not implement any rules. It is however crucial to implement rules for cleaner code when working with a larger team of people on more code so as to make it easier to understand each other's codes and debug.
+
+Yes, we implemented rules for code quality and format in our project. We used Ruff in our GitHub Actions workflow. This helps ensure that all the code we write follows style and quality guidelines.
+
+In larger projects, having rules for code quality and format is very important because it keeps the code consistent and readable for everyone on the team. It's like having a common language that everyone follows, which makes it easier to understand and work on each other's code. Plus, it helps prevent small errors that can lead to bigger problems later on (technical debt). 
 
 ## Version control
 
@@ -193,7 +196,13 @@ Due to our small team size and the small amount of coded needed for the training
 >
 > Answer:
 
-We implemented a single test to check that the data was loaded in correctly but did not feel the need to test any more due to the simplicity of the remaining code giving us certainty that the rest is working.
+We implemented a test to check that the data was loaded in correctly. In the test_model_train.py file, we created tests to check different parts of our training process. We tested,
+
+Data Loading: if our training and testing datasets are correctly loaded. We make sure that these datasets are not empty and contain the necessary columns, like 'income', which we need for training.
+
+Model Training: We test the function that trains our model. We pass our training data to this function, including the features we want to use and the target variable 'income'. We check if the function successfully trains the model and returns a trained model object.
+
+We use pytest to set up our data before running the tests, and we use assert statements to ensure that the outcomes of the functions we're testing. Both tests are also part of our Github Actions workflow and are triggered everytime code is pushed or merged into main.
 
 ### Question 8
 
@@ -299,7 +308,9 @@ To make sure that a training experiment is reproducable we used a make sure that
 > **service of your choice). This may include loss graphs, logged images, hyperparameter sweeps etc. You can take**
 > **Explain what metrics you are tracking and why they are**
 > **important.**
->Here are our ![logging results from WandB](figures/wandb_mlops.png)
+
+Here are our ![logging results from WandB](figures/wandb_mlops.png)
+
 Due to the simplicity of our model, we are only tracking a couple of several key metrics to evaluate the performance and behavior of our model. The metrics help us understand how our model is performing and identify areas for improvement. 
 
 Accuracy: This measures how often our model correctly predicts the target variable. We track accuracy because it gives us a straightforward indication of the model's effectiveness. 
@@ -536,3 +547,8 @@ Then when building the docker images in the GC there I spent some time figuring 
     + FastAPI deployment
     + Hydra configuration
  ---
+
+### Question 28
+Meme of the projct
+![Alt Text](figures/giphy.gif)
+
