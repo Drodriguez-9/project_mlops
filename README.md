@@ -1,4 +1,4 @@
-# Salary classification MLOps 
+# MLops_proj
 
 ## Project structure
 
@@ -35,7 +35,7 @@ The directory structure of the project looks like this:
 │
 ├── tests                <- Test files
 │
-├── tbd  <- Source code for use in this project.
+├── MLops_proj  <- Source code for use in this project.
 │   │
 │   ├── __init__.py      <- Makes folder a Python module
 │   │
