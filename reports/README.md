@@ -546,6 +546,12 @@ Then when building the docker images in the GC there I spent some time figuring 
     + Training code for model
     + FastAPI deployment
     + Hydra configuration
+
+- s223730:
+    + logging: WandB
+    + tests: pytest
+    + formatting/linting: ruff
+    + Github Actions workflow
  ---
 
 ### Question 28
