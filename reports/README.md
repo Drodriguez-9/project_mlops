@@ -299,7 +299,7 @@ To make sure that a training experiment is reproducable we used a make sure that
 > **service of your choice). This may include loss graphs, logged images, hyperparameter sweeps etc. You can take**
 > **Explain what metrics you are tracking and why they are**
 > **important.**
->Here are our [logging results from WandB](figures/wandb_mlops.png)
+>Here are our ![logging results from WandB](figures/wandb_mlops.png)
 Due to the simplicity of our model, we are only tracking a couple of several key metrics to evaluate the performance and behavior of our model. The metrics help us understand how our model is performing and identify areas for improvement. 
 
 Accuracy: This measures how often our model correctly predicts the target variable. We track accuracy because it gives us a straightforward indication of the model's effectiveness. 
