@@ -550,5 +550,6 @@ Then when building the docker images in the GC there I spent some time figuring 
 
 ### Question 28
 Meme of the projct
+
 ![Alt Text](figures/giphy.gif)
 
