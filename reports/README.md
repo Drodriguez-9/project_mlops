@@ -297,18 +297,17 @@ To make sure that a training experiment is reproducable we used a make sure that
 
 > **Upload 1 to 3 screenshots that show the experiments that you have done in W&B (or another experiment tracking**
 > **service of your choice). This may include loss graphs, logged images, hyperparameter sweeps etc. You can take**
-> **inspiration from [this figure](figures/wandb.png). Explain what metrics you are tracking and why they are**
+> **Explain what metrics you are tracking and why they are**
 > **important.**
->
-> Answer length: 200-300 words + 1 to 3 screenshots.
->
-> Example:
-> *As seen in the first image when have tracked ... and ... which both inform us about ... in our experiments.*
-> *As seen in the second image we are also tracking ... and ...*
->
-> Answer:
+>Here are our [logging results from WandB](figures/wandb_mlops.png)
+Due to the simplicity of our model, we are only tracking a couple of several key metrics to evaluate the performance and behavior of our model. The metrics help us understand how our model is performing and identify areas for improvement. 
 
---- question 14 fill here ---
+Accuracy: This measures how often our model correctly predicts the target variable. We track accuracy because it gives us a straightforward indication of the model's effectiveness. 
+
+Prediction Details: We log the actual predictions made by our model. This is important because it lets us compare it against the true values.
+
+We track these metrics using wandb when training the model in train_model.py, and we use WandbCallback, a special feature in wandb implemented for fastai.
+
 
 ### Question 15
 
