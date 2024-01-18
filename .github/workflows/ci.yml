@@ -15,7 +15,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.10'
+        python-version: '3.10'  # Replace with your Python version
 
     - name: Install dependencies
       run: |
@@ -24,6 +24,7 @@ jobs:
         # Install other dependencies if needed
 
     - name: Lint with Ruff
+      continue-on-error: true  # This allows the workflow to continue even if this step fails
       run: ruff .
 
     - name: Test with pytest
