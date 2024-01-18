@@ -28,4 +28,4 @@ jobs:
       run: ruff .
 
     - name: Test with pytest
-      run: pytest ./test/
+      run: pytest tests/
