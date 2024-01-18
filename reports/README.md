@@ -291,7 +291,7 @@ We set up DVC for managing our data, it was however not necessary by any means d
 >
 > Answer:
 
-To make sure that a training experiment is reproducable we used a seed when splitting our data up into training/test data. Theoretically one should therefore get the samr results as we did by running the code.
+To make sure that a training experiment is reproducable we used a make sure that the data split is the same everytime the code is ran, either through a seed or by splitting the data in order. To further make sure that experiments are reproducible, we've created a docker image that can be used to have the same conditions as we did when running the code.
 
 ### Question 14
 
