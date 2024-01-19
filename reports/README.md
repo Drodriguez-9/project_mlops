@@ -340,7 +340,7 @@ We track these metrics using wandb when training the model in train_model.py, an
 >
 > Answer:
 
---- We created two images, one for training and storing the trained model and another for making the predictions. As I dont have GPU in my personal computer, I just run the images using CPU.
+We created two images, one for training and storing the trained model and another for making the predictions. As I dont have GPU in my personal computer, I just run the images using CPU.
 The train image just makes the data and then trains the model before saving it into the models folder. This is how the train dockerfile looks like:
 # Base image
 FROM python:3.11-slim
@@ -364,7 +364,6 @@ ENTRYPOINT ["python", "-u", "tbd/models/train_model.py"]
 This is how it looks like:
 ![my_image](figures/docker_images.png)
 
- ---
 
 ### Question 16
 
@@ -396,7 +395,7 @@ Due to the simplicity of our training code, we did not find that using a python 
 > 
 > Answer:
 
---- We have used two primary GCP services: Google Cloud Compute Engine and Google Cloud Storage (bucket)
+We have used two primary GCP services: Google Cloud Compute Engine and Google Cloud Storage (bucket)
 
 Google Cloud Storage provides scalable and secure object storage on the cloud. It's used for storing large datasets, with 'buckets' serving as the primary containers for data. Users can specify unique bucket names, storage classes, and locations.
 
@@ -404,7 +403,7 @@ As previously mentioned, we set up the dvc configuration to have the data stored
 To make the data storage process more secure (let's suppose we are working with sensitive data as patients data) we decided to create a service account. 
 
 Google Cloud Compute Engine offers a service within the Google Cloud Platform for creating, configuring, and scaling virtual machines quickly. It's cost-effective, secure, and allows for rapid scaling and customization of infrastructure. Users can choose the precise zone and region for their data resources, making it suitable for a variety of applications including databases and websites.
-We requested a GPU even though the training was completely doable with local resources. The reason being we had the scalability as one of the main goals of the project.   ---
+We requested a GPU even though the training was completely doable with local resources. The reason being we had the scalability as one of the main goals of the project.   
 
 ### Question 18
 
@@ -452,7 +451,7 @@ Under the folder the raw data is stored, as we can see here:
 >
 > Answer:
 
---- ![my_image](figures/registry.png) ---
+![my_image](figures/registry.png) 
 
 ### Question 21
 
@@ -461,7 +460,7 @@ Under the folder the raw data is stored, as we can see here:
 >
 > Answer:
 
---- ![my_image](figures/build.png) ---
+![my_image](figures/build.png) 
 
 ### Question 22
 
@@ -509,8 +508,8 @@ We did not employ monitoring of the deployed model due to time constraints. If w
 >
 > Answer:
 
----Overall we the Compute engine was the most expensive service. The costs are variable depending on the date with some days that the Bucket service is even higher that the Engine.
-![my_image](figures/costs.png)---
+Overall we the Compute engine was the most expensive service. The costs are variable depending on the date with some days that the Bucket service is even higher that the Engine.
+![my_image](figures/costs.png
 
 (MISSING)
 
@@ -533,7 +532,6 @@ We did not employ monitoring of the deployed model due to time constraints. If w
 >
 > Answer:
 
---- question 25 fill here ---
 
 
 ![my_image](figures/overview.png)
@@ -572,7 +570,7 @@ s230148: Working with dockers. It was the first time and I struggled to figure o
 >
 > Answer:
 
---- 
+
 - s222883: 
     + Git repo and cookiecutter template.
     + Data Version Control (DVC) both in Google Drive and Google Cloud.
@@ -598,7 +596,7 @@ s230148: Working with dockers. It was the first time and I struggled to figure o
   + env requirements
   + model parameters
   + project reporting 
- ---
+
 
 ### Question 28
 Meme of the projct
