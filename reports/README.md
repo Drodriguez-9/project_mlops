@@ -267,9 +267,9 @@ We set up DVC for managing our data, it was however not necessary by any means d
 >
 > Answer:
 
-Please, refer to our answers to question 6 & 7. We perform unuttesting and linting for the latest macos, ubuntu and windows.
-We have 
-We don't use caching.
+Our continuous integration setup includes unittesting and linting, which we run on the latest versions of macOS, Ubuntu, and Windows. We don't use caching in our process. Referring to question 6, for code quality and format, we have implemented rules using Ruff in our GitHub Actions workflow. This is important in larger projects to maintain code consistency, readability, and to prevent technical debt.
+
+Regarding tests, as we mentioned in question 7, we have implemented several tests in our project. These include tests for data loading to ensure correct and complete datasets, and tests for model training, which verify the functioning of our model training process. We use pytest for setting up data and assert statements for validating outcomes. These tests are in our GitHub Actions workflow and are triggered with every push or merge into the main branch.
 
 ## Running code and tracking experiments
 
