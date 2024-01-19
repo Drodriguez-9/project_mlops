@@ -340,9 +340,29 @@ We track these metrics using wandb when training the model in train_model.py, an
 >
 > Answer:
 
---- We created two images, one for training and storing the trained model and another for making the predictions. As I dont have GPU in my personal computer, I just run the images using 
+--- We created two images, one for training and storing the trained model and another for making the predictions. As I dont have GPU in my personal computer, I just run the images using CPU.
+The train image just makes the data and then trains the model before saving it into the models folder. This is how the train dockerfile looks like:
+# Base image
+FROM python:3.11-slim
 
-(MISSING)
+RUN apt update && \
+    apt install --no-install-recommends -y build-essential gcc && \
+    apt clean && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt requirements.txt
+COPY pyproject.toml pyproject.toml
+COPY tbd/ tbd/
+COPY data/ data/
+COPY models/ models/
+
+WORKDIR /
+RUN pip install -r requirements.txt
+RUN pip install . --no-deps
+
+ENTRYPOINT ["python", "-u", "tbd/models/train_model.py"]
+
+This is how it looks like:
+![my_image](figures/docker_images.png)
 
  ---
 
@@ -492,7 +512,8 @@ We deployed our model locally using fastapi in our app.py file. When running "uv
 >
 > Answer:
 
---- question 24 fill here ---
+---Overall we the Compute engine was the most expensive service. The costs are variable depending on the date with some days that the Bucket service is even higher that the Engine.
+![my_image](figures/costs.png)---
 
 (MISSING)
 
