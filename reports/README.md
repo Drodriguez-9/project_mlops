@@ -288,7 +288,7 @@ Regarding tests, as we mentioned in question 7, we have implemented several test
 >
 > Answer:
 
- We used a config file to specify our hyperparameters meaning that to run the code you just have to run python train_model.py . If you want to adjust the parameters just adjust the values in config/hyperparameters.yaml .
+In our project, we manage hyperparameters by using a configuration file. This file, config/hyperparameters.yaml, contains key hyperparameters batch_size and epochs. To run the training script, you simply execute python train_model.py. If there's a need to modify the training parameters, you can easily adjust the values in the config file. For instance, our current configuration sets batch_size to 64 and epochs to 5. This approach makes our training process both flexible and user-friendly, as changes can be made quickly without altering the core code.
 
 ### Question 13
 
