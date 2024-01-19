@@ -8,14 +8,19 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: ['3.10']  # List Python versions here if you want to test on multiple versions
 
     steps:
     - uses: actions/checkout@v2
+
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.10'  # Replace with your Python version
+        python-version: ${{ matrix.python-version }}
 
     - name: Install dependencies
       run: |
@@ -26,7 +31,7 @@ jobs:
         # Install other dependencies if needed
 
     - name: Lint with Ruff
-      continue-on-error: true  # This allows the workflow to continue even if this step fails
+      continue-on-error: true
       run: ruff .
 
     - name: Test with pytest
