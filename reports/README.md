@@ -117,7 +117,7 @@ end of the project.
 >
 > Answer:
 
- --- s233593, s223730, s222883, s230148 ---
+ s233593, s223730, s222883, s230148
 
 ### Question 3
 > **What framework did you choose to work with and did it help you complete the project?**
@@ -130,7 +130,7 @@ end of the project.
 >
 > Answer:
 
- --- We used the third-party framework fastai in our project. We used their tabular learner as our model and trained it using their fit_one_cycle function. ---
+ We used the third-party framework fastai in our project. We used their tabular learner as our model and trained it using their fit_one_cycle function. 
 
 ## Coding environment
 
@@ -149,7 +149,7 @@ end of the project.
 >
 > Answer:
 
---- We used a requirements.txt file for managing our dependencies. We then each had a virtual environment locally saved in the repository folder that we used with pip to have the right versions of packages installed. ---
+We used a requirements.txt file for managing our dependencies. We then each had a virtual environment locally saved in the repository folder that we used with pip to have the right versions of packages installed. 
 
 ### Question 5
 
@@ -164,7 +164,7 @@ end of the project.
 > *experiments.*
 > Answer:
 
---- We added a config folder to use with hydra for our hyperparameters. We then removed the notebooks folders since we didn't need any notebooks for our implementation and then also removed the model.py file inside project/models since our model was built using fastai. Lastly we also removes the visualizations folder inside of the project folder since our model didn't call for any visualizations. ---
+We added a config folder to use with hydra for our hyperparameters. We then removed the notebooks folders since we didn't need any notebooks for our implementation and then also removed the model.py file inside project/models since our model was built using fastai. Lastly we also removes the visualizations folder inside of the project folder since our model didn't call for any visualizations.
 
 ### Question 6
 
@@ -176,9 +176,9 @@ end of the project.
 > Answer:
 
 
---- Yes, we implemented rules for code quality and format in our project. We used Ruff in our GitHub Actions workflow. This helps ensure that all the code we write follows style and quality guidelines.
+Yes, we implemented rules for code quality and format in our project. We used Ruff in our GitHub Actions workflow. This helps ensure that all the code we write follows style and quality guidelines.
 
-In larger projects, having rules for code quality and format is very important because it keeps the code consistent and readable for everyone on the team. It's like having a common language that everyone follows, which makes it easier to understand and work on each other's code. Plus, it helps prevent small errors that can lead to bigger problems later on (technical debt). ---
+In larger projects, having rules for code quality and format is very important because it keeps the code consistent and readable for everyone on the team. It's like having a common language that everyone follows, which makes it easier to understand and work on each other's code. Plus, it helps prevent small errors that can lead to bigger problems later on (technical debt).
 
 ## Version control
 
@@ -197,13 +197,13 @@ In larger projects, having rules for code quality and format is very important b
 >
 > Answer:
 
---- We implemented a test to check that the data was loaded in correctly. In the test_model_train.py file, we created tests to check different parts of our training process. We tested,
+We implemented a test to check that the data was loaded in correctly. In the test_model_train.py file, we created tests to check different parts of our training process. We tested,
 
 Data Loading: if our training and testing datasets are correctly loaded. We make sure that these datasets are not empty and contain the necessary columns, like 'income', which we need for training.
 
 Model Training: We test the function that trains our model. We pass our training data to this function, including the features we want to use and the target variable 'income'. We check if the function successfully trains the model and returns a trained model object.
 
-We use pytest to set up our data before running the tests, and we use assert statements to ensure that the outcomes of the functions we're testing. Both tests are also part of our Github Actions workflow and are triggered everytime code is pushed or merged into main. ---
+We use pytest to set up our data before running the tests, and we use assert statements to ensure that the outcomes of the functions we're testing. Both tests are also part of our Github Actions workflow and are triggered everytime code is pushed or merged into main.
 
 ### Question 8
 
@@ -218,7 +218,7 @@ We use pytest to set up our data before running the tests, and we use assert sta
 >
 > Answer:
 
---- Our coverage is very small due to only testing the dataloading and we're still confident in the code working correctly due to the model accuracy being satisfactory and the remaining code being quite simple. ---
+Our coverage is very small due to only testing the dataloading and we're still confident in the code working correctly due to the model accuracy being satisfactory and the remaining code being quite simple. 
 
 ### Question 9
 
@@ -233,10 +233,10 @@ We use pytest to set up our data before running the tests, and we use assert sta
 >
 > Answer:
 
---- We did indeed use branches in our group so that we could all work on different things at the same time without any causing any errors. When someone was done with their part they would upload it to their own branch and someone else would review it and merge it.
+We did indeed use branches in our group so that we could all work on different things at the same time without any causing any errors. When someone was done with their part they would upload it to their own branch and someone else would review it and merge it.
 The workflow when you wanted to add a new feature to the code (or correct a bug) was the following:
 First you would git checkout main and pull the most recent changes. After this you would create a branch called feat/feature_name (or bug/bug_name). When finished with the changes you will pull to check if any changes have been made to main and then git rebase main to place your branch changes on top of the main ones. Then you would push your branch changes and create a Pull Request in the Github browser describing your commit. The main branch is protected so someone has to approve your PR before merging it.
-We know that this whole process may be a bit tedious for this kind of small projects, but we wanted to ensure the scalability and reliability of the code (as if main was the production branch). ---
+We know that this whole process may be a bit tedious for this kind of small projects, but we wanted to ensure the scalability and reliability of the code (as if main was the production branch).
 
 ### Question 10
 
@@ -251,7 +251,7 @@ We know that this whole process may be a bit tedious for this kind of small proj
 >
 > Answer:
 
---- We set up DVC for managing our data, it was however not necessary by any means due to the small size of our data. Version control of data becomes useful when you have large collections of data that are getting processed, to make sure that the right versions of the data are used by the right models. ---
+We set up DVC for managing our data, it was however not necessary by any means due to the small size of our data. Version control of data becomes useful when you have large collections of data that are getting processed, to make sure that the right versions of the data are used by the right models.
 
 ### Question 11
 
