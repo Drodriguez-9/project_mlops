@@ -555,7 +555,7 @@ s222883: There was an issue with the cloud ssh keys autorization which didn't al
 Then when building the docker images in the GC there I spent some time figuring out an error as you cannot use build --mount option.
 s223730: Understanding containers. Tutorials and Youtube videos. 
 s233593: Loading the saved model and using it to predict for the local deployment of the model actually proved to give us a lot of issues.
---- question 26 fill here ---
+s230148: Working with dockers. It was the first time and I struggled to figure out.
 
 ### Question 27
 
