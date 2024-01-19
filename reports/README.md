@@ -267,9 +267,9 @@ We set up DVC for managing our data, it was however not necessary by any means d
 >
 > Answer:
 
-Sadly, we did not have the time to setup continuous integration as a part of this project.
-
-(MISSING)
+Please, refer to our answers to question 6 & 7. We perform unuttesting and linting for the latest macos, ubuntu and windows.
+We have 
+We don't use caching.
 
 ## Running code and tracking experiments
 
