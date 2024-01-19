@@ -461,12 +461,9 @@ Under the folder the raw data is stored, as we can see here:
 > **your project. You can take inspiration from [this figure](figures/build.png).**
 >
 > Answer:
-Still not done. Not sure if we are gonna do it.
 
 --- ![my_image](figures/build.png) ---
 
-
-(MISSING)
 ### Question 22
 
 > **Did you manage to deploy your model, either in locally or cloud? If not, describe why. If yes, describe how and**
@@ -496,7 +493,8 @@ We deployed our model locally using fastapi in our app.py file. When running "uv
 >
 > Answer:
 
---- question 23 fill here ---
+We did not employ monitoring of the deployed model due to time constraints. If we were to employ it, it could help improve user experience by monitoring their behaviour, allowing us to make changes accordingly. It could also be useful to see resource allocation which could be very relevant as the deployed model stays up.
+
 
 (MISSING)
 
@@ -558,7 +556,7 @@ s222883: There was an issue with the cloud ssh keys autorization which didn't al
 Then when building the docker images in the GC there I spent some time figuring out an error as you cannot use build --mount option.
 s223730: Understanding containers. Tutorials and Youtube videos. 
 s233593: Loading the saved model and using it to predict for the local deployment of the model actually proved to give us a lot of issues.
---- question 26 fill here ---
+s230148: Working with dockers. It was the first time and I struggled to figure out.
 
 ### Question 27
 
