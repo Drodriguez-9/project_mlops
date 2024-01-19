@@ -269,7 +269,6 @@ We set up DVC for managing our data, it was however not necessary by any means d
 
 Sadly, we did not have the time to setup continuous integration as a part of this project.
 
-(MISSING)
 
 ## Running code and tracking experiments
 
@@ -461,12 +460,9 @@ Under the folder the raw data is stored, as we can see here:
 > **your project. You can take inspiration from [this figure](figures/build.png).**
 >
 > Answer:
-Still not done. Not sure if we are gonna do it.
 
 --- ![my_image](figures/build.png) ---
 
-
-(MISSING)
 ### Question 22
 
 > **Did you manage to deploy your model, either in locally or cloud? If not, describe why. If yes, describe how and**
@@ -496,7 +492,8 @@ We deployed our model locally using fastapi in our app.py file. When running "uv
 >
 > Answer:
 
---- question 23 fill here ---
+We did not employ monitoring of the deployed model due to time constraints. If we were to employ it, it could help improve user experience by monitoring their behaviour, allowing us to make changes accordingly. It could also be useful to see resource allocation which could be very relevant as the deployed model stays up.
+
 
 (MISSING)
 
