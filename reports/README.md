@@ -340,9 +340,29 @@ We track these metrics using wandb when training the model in train_model.py, an
 >
 > Answer:
 
---- We created two images, one for training and storing the trained model and another for making the predictions. As I dont have GPU in my personal computer, I just run the images using 
+--- We created two images, one for training and storing the trained model and another for making the predictions. As I dont have GPU in my personal computer, I just run the images using CPU.
+The train image just makes the data and then trains the model before saving it into the models folder. This is how the train dockerfile looks like:
+# Base image
+FROM python:3.11-slim
 
-(MISSING)
+RUN apt update && \
+    apt install --no-install-recommends -y build-essential gcc && \
+    apt clean && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt requirements.txt
+COPY pyproject.toml pyproject.toml
+COPY tbd/ tbd/
+COPY data/ data/
+COPY models/ models/
+
+WORKDIR /
+RUN pip install -r requirements.txt
+RUN pip install . --no-deps
+
+ENTRYPOINT ["python", "-u", "tbd/models/train_model.py"]
+
+This is how it looks like:
+![my_image](figures/docker_images.png)
 
  ---
 
@@ -378,12 +398,12 @@ Due to the simplicity of our training code, we did not find that using a python 
 
 --- We have used two primary GCP services: Google Cloud Compute Engine and Google Cloud Storage (bucket)
 
-"Google Cloud Storage provides scalable and secure object storage on the cloud. It's used for storing large datasets, with 'buckets' serving as the primary containers for data. Users can specify unique bucket names, storage classes, and locations."
+Google Cloud Storage provides scalable and secure object storage on the cloud. It's used for storing large datasets, with 'buckets' serving as the primary containers for data. Users can specify unique bucket names, storage classes, and locations.
 
 As previously mentioned, we set up the dvc configuration to have the data stored in Google Drive. However, we wanted to store the data in Google Cloud instead, so we created a bucket.
 To make the data storage process more secure (let's suppose we are working with sensitive data as patients data) we decided to create a service account. 
 
-"Google Cloud Compute Engine offers a service within the Google Cloud Platform for creating, configuring, and scaling virtual machines quickly. It's cost-effective, secure, and allows for rapid scaling and customization of infrastructure. Users can choose the precise zone and region for their data resources, making it suitable for a variety of applications including databases and websites."
+Google Cloud Compute Engine offers a service within the Google Cloud Platform for creating, configuring, and scaling virtual machines quickly. It's cost-effective, secure, and allows for rapid scaling and customization of infrastructure. Users can choose the precise zone and region for their data resources, making it suitable for a variety of applications including databases and websites.
 We requested a GPU even though the training was completely doable with local resources. The reason being we had the scalability as one of the main goals of the project.   ---
 
 ### Question 18
@@ -492,7 +512,8 @@ We deployed our model locally using fastapi in our app.py file. When running "uv
 >
 > Answer:
 
---- question 24 fill here ---
+---Overall we the Compute engine was the most expensive service. The costs are variable depending on the date with some days that the Bucket service is even higher that the Engine.
+![my_image](figures/costs.png)---
 
 (MISSING)
 
