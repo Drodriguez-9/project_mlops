@@ -537,7 +537,7 @@ We did not employ monitoring of the deployed model due to time constraints. If w
 --- question 25 fill here ---
 
 
--- ![my_image](figures/overview.png) ---
+![my_image](figures/overview.png)
 
 The starting point of our project was the actual code needed to train our model. We used the fastai module's tabular learner, based on pytorch, which worked quite flawlessly and cleanly. We then used github to store our code in the cookiecutter template that was given to us in the course. When making changes in the code we simply made a new branch and merged it into the repository. Even though the model could easily be trained locally, we used GCP to train the model and wandb to track the training progress. Once we had a trained model we used fastapi to deploy the model locally, allowing us to easily make predictions about people's incomes.
 
