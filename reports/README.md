@@ -422,7 +422,6 @@ First we started creating a simple VM instance to try out Google Cloud and test 
 We chose the closest location to reduce latency. For the resources we chose one of the cheapest as our data set is rather small and we did not want to spend the 50$ before finishing.
 Machine type - n1-standard-1
 CPU platform - Intel Haswell
-
 We also configure an instance to allow GPU usage just to make sure we could have scalated the model if more GPU was required. For this we had to reques an update of the resources in the QUOTA menu.
 We only requested 1 so they accept quickly the upgrade. This is the command used to create this second instance:
 gcloud compute instances create "mlopsgpu" \
