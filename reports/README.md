@@ -106,7 +106,7 @@ end of the project.
 >
 > Answer:
 
---- 72 ---
+72
 
 ### Question 2
 > **Enter the study number for each member in the group**
